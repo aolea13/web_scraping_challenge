@@ -1,6 +1,6 @@
 /* Background */
 body {
-	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background: linear-gradient(-45deg, #E29F8E, #615a55, #C8795A, #DCA19B);
 	background-size: 400% 400%;
     animation: gradient 15s ease infinite;
 }
@@ -17,14 +17,6 @@ body {
 	}
 }
 
-/* Header */
-
-#header{
-    margin-top: 65px;
-    margin-bottom: 15px;
-    color: white;
-    text-align: center;
-}
 /*Jumbotron*/
 
 #jumbo{
@@ -33,32 +25,12 @@ body {
 }
 /* Button */
 #button{
-    background: darkgray;
+    background: black;
     color: white;
 }
 
-
-/* Images */
-img{
-    width: 100% !important;
-    height: 100% !important;
-}
-.active, .panel:hover{
-    border-color: darkgrey;
-    border-style: solid;
-}
-.visualization{
-    width: 50% !important;
-    height: 50% !important;
-}
-
-/* Box Class */
-.box{
-    margin-top: 65px;
-    margin-bottom: 65px;
-    padding: 10px 20px 15px;
-    color:white;
-    background-color: transparent;
+.mars_facts{
+    float: right;
 }
 
 /* Footer */

@@ -123,7 +123,7 @@ def scrape_all():
     'news_p': news_p,
     'featured_image': img_url,
     'facts': facts,
-    'hemispheres': hemisphere_image_urls,
+    'hemisphere': hemisphere_image_urls,
     'last_modified': timestamp
   }
   browser.quit()

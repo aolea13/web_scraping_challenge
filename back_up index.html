@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Mission Control</title>
+    <div class='container' id = 'header'>
+        <h1>Mission Control</h1>
+    </div>
+    <!--BootStrap-->
+    <link rel = 'stylesheet' href = 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity = 'sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm'
+    crossorigin = 'anonymous'>
+    <link rel = 'stylesheet' type = 'text/css' href = "{{ url_for('static',filename='styles/style.css') }}">
+
+</head>
+<body>
+    <div class='container'>
+        <!---Button-->
+        <div class = 'text-center'; id = 'jumbo' background-position: center; background-size: cover;'>
+            <h1 class = 'display-3'></h1>
+            <p><a class = 'btn btn-lg' id = 'button' href = '/scrape' role = 'button' style='text-align:center;'>Update</a></p>
+        </div>      
+        <div class='row no-gutter'>
+            <!--Mars News-->
+            <div class = 'container-fluid news no-padding'>
+                <div class = 'card-body'  id = 'news'>
+                        <center><h2 class = 'card-title' style = 'padding-bottom: 15px; padding-top: 35px; color: white;'>Latest News</h2></center>
+                        <center><h3>{{mars_data.news_t}}</h3></center>
+                        <p style = >{{mars_data.news_p}}</p>
+                </div>
+            </div>
+
+            <!--Featured Image-->
+            <div class = 'container'>
+                <div class='container-fluid' id='featured_image'>
+                    <div class = 'col-lg-8 col-md-8 col-sm-8'>
+                        <h2 style = 'color: white;'>Latest Image</h2>
+                        <img src = '{{mars_data.featured_image}}' class = 'img-responsive' style= 'width:400px; height:30px;' alt = 'Featured Image'>
+                    </div>
+                </div>
+            </div>
+        
+
+            <!--Mars Facts-->
+            <div class = 'card' style = 'max-width: 18rem;'>
+                <div class='row no-gutter'></div>
+                    <div class = 'container-fluid' id = 'mars_facts'>
+                        <div class = 'col-mo-4'>
+                            <h2>Mars Facts</h2>
+                            {{mars_data.facts | safe}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--Hemisphers-->
+            <h2 style = 'padding-top: 50px; margin-top: 100px; text-align: center; color: white;'>Hemisphers</h2>
+            <div class = 'card-deck'> 
+                <hr>
+                <div class = 'col-md-12'>
+                    <div class = 'container-fluid' id = 'hemispheres'>
+                        {% for hemisphere in mars_data.hemisphere %}
+                        <div class = 'col-md-6'>
+                            <div class = 'card text-white' style = 'margin: 30px;'>
+                                <img class = 'card-img-top' src = '{{hemisphere.img_url}}''>
+                                <div class = 'card-body'>
+                                    <p class = 'card-text' style='color: black'>{{hemisphere.title}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!--Bootstrap JS-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+crossorigin="anonymous"></script>
+
+
+</body>
+</html>
