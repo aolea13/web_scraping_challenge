@@ -17,12 +17,26 @@ body {
 	}
 }
 
+/* Header */
+
+#header{
+    margin-top: 65px;
+    margin-bottom: 15px;
+    color: white;
+    text-align: center;
+}
 /*Jumbotron*/
 
-#jumbo#jumbo {
+#jumbo{
 
     background: transparent;
 }
+/* Button */
+#button{
+    background: darkgray;
+    color: white;
+}
+
 
 /* Images */
 img{
