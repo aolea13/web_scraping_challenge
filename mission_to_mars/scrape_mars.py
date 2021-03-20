@@ -6,8 +6,8 @@ import datetime as dt
 
 
 # set up driver
-executable_path = {'executable_path': '/Applications/chromedriver'}
-browser = Browser('chrome', **executable_path, headless = False)
+# executable_path = {'executable_path': '/Applications/chromedriver'}
+# browser = Browser('chrome', **executable_path, headless = False)
 
 ##########
 #Mars News
@@ -110,7 +110,7 @@ def hemisphere(browser):
 
 def scrape_all():
 
-  # executable_path = {'executable_path': '/Applications/chromedriver'}
+  executable_path = {'executable_path': '/Applications/chromedriver'}
   browser = Browser('chrome', **executable_path, headless = False)
   news_t, news_p = mars_news(browser)
   img_url = featured_image_url(browser)

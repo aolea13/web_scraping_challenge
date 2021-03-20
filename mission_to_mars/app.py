@@ -14,8 +14,8 @@ mongo = PyMongo(app)
 #Flask Routes
 @app.route('/')
 def index():
-    mars = mongo.db.mars.find_one()
-    return render_template('index.html', mars=mars)
+    mars_data = mongo.db.mars.find_one()
+    return render_template('index.html', mars_data=mars_data)
 
 @app.route('/scrape')
 def scrapper():
